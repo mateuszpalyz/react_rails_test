@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+
+development:
+  <<: *default
+  database: react_rails_books_dev
+
+test:
+  <<: *default
+  database: react_rails_books_test

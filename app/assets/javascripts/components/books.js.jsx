@@ -22,7 +22,7 @@ var BooksBox = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Books</h1>
+        <h1>Book Store</h1>
         <BooksList data={this.state.data} />
       </div>
     );
@@ -37,7 +37,7 @@ var BooksList = React.createClass({
       );
     });
     return (
-      <div>
+      <div className="list-group">
         {booksNodes}
       </div>
     );
@@ -47,10 +47,10 @@ var BooksList = React.createClass({
 var Book = React.createClass({
   render: function() {
     return (
-      <ul>
-        <li>{this.props.book.title}</li>
-        <li>{this.props.book.author}</li>
-      </ul>
+      <div className="list-group-item">
+        <h4 className="list-group-item-heading">{this.props.book.title}</h4>
+        <p className="list-group-item-text">{this.props.book.author}<span className="glyphicon glyphicon-shopping-cart pull-right" aria-hidden="true"></span></p>
+      </div>
     );
   }
 });
